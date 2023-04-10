@@ -1,12 +1,12 @@
 import React from "react";
 import NotItems from "./NoteItems";
 
-function NoteList({notes, onAchive, onDelete}) {
+function NoteList({notes, onArchive, onDelete, onRemove}) {
     return (
         <div className="note-list">
             {
                 notes.map((note) => (
-                    <NotItems key={note.id} id={note.id} onArchive={onAchive} onDelete={onDelete} {...note} />
+                    <NotItems key={note.id} id={note.id} onArchive={onArchive} onDelete={onDelete} onRemove={onRemove} {...note} />
                 )
             )}
         </div>

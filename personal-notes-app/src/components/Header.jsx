@@ -1,13 +1,11 @@
 import React from "react";
-import AddInput from "./AddNote";
+import SearchBar from "./SearchBar";
 
-function Header() {
+function Header({ searchNote }) {
     return (
         <header className="header">
             <h1 className="header-name">Maman Notes</h1>
-            {/* <div className="seacrh-bar">
-                <AddInput type="seacrh" placeholder="Cari Catatan..." value={search} onChange={setQuery} />
-            </div> */}
+            <SearchBar searchNote={searchNote} />
         </header>
     );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import NoteBody from "./NoteBody";
+import RemoveButton from "./MoveButton";
 import ArchiveButton from "./ArchiveButton";
 import DeleteButton from "./DeleteButton";
 import { showFormattedDate } from "../utils/data";
@@ -11,11 +12,16 @@ function NotItems({id, title, body, createdAt, onArchive, onDelete, onRemove, ar
                 <NoteBody title={title} body={body} createdAt={showFormattedDate(createdAt)} />               
             </div>
             <div className="note-item__button">
+               <DeleteButton id={id} onDelete={onDelete} />
+               {
+                archived?
+                <RemoveButton id={id} onRemove={onRemove} />
+                :
                 <ArchiveButton id={id} onArchive={onArchive} />
-                <DeleteButton id={id} onDelete={onDelete} />
+               }
             </div>
         </div>
     );
 }
 
-export default NotItems
+export default NotItems;
